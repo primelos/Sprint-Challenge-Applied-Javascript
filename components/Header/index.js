@@ -21,14 +21,13 @@ header1.classList.add('header');
 spanDate.classList.add('date');
 spanTemp.classList.add('temp');
 
-header1.appendChild(spanDate);
-header1.appendChild(title);
-header1.appendChild(spanTemp);
-
 spanDate.textContent = 'SMARCH 28, 2019';
 title.textContent = 'Lambda Times';
 spanTemp.textContent = '98°';
 
+header1.appendChild(spanDate);
+header1.appendChild(title);
+header1.appendChild(spanTemp);
 
 return header1;
 
