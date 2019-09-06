@@ -15,8 +15,7 @@ axios.get(`https://lambda-times-backend.herokuapp.com/topics`)
         const newArray = response.data['topics'];
         newArray.forEach(item => {
         topic.appendChild(createTabs(item))
-        })
-       
+        });
     })
     .catch(error => {
         console.log('tabs error', error)

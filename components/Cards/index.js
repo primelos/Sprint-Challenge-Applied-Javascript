@@ -20,13 +20,13 @@
 
 const cardContainer = document.querySelector('.cards-container')
 
-axios.get(`https://lambda-times-backend.herokuapp.com/{articles`)
-    .then(response1 => {
-        console.log('cards test', response1)
-        const newArray2 = response1.data.articles['headline'];
-        newArray2.forEach(item => {
+axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
+    .then(response => {
+        console.log('cards test', response);
+        const ourCards = response.data.articles['bootstrap'];
+        ourCards.forEach(item => {
         cardContainer.appendChild(newCards(item))
-        })
+        });
     })
     .catch(error =>{
         console.log('cards error', error)
@@ -51,9 +51,9 @@ function newCards(y){
     auth.appendChild(byName);
     imgCont.appendChild(image1);
 
-    headLine.textContent = `${y.headline}`;
-    image1.src = `${y.authorPhoto}`;
-    byName.textContent = `By: ${y.authorName}`
+    headLine.textContent = y;
+    image1.src = y;
+    byName.textContent = y
 
 
     return cards
